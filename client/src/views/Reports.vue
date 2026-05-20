@@ -322,21 +322,21 @@ export default {
 }
 
 .card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--color-surface);
+  border-radius: 12px; /* no token: 12px is between --radius-md (10px) and --radius-lg (16px) */
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* no token: differs from --shadow-sm in color/alpha */
 }
 
 .card-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: 1.25rem; /* no token: between --text-lg (1.125rem) and --text-xl (1.375rem) */
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
   margin: 0;
 }
 
@@ -346,25 +346,25 @@ export default {
 }
 
 .reports-table th {
-  background: #f8fafc;
-  padding: 0.75rem;
+  background: var(--color-bg);
+  padding: var(--space-3);
   text-align: left;
-  font-weight: 600;
-  color: #64748b;
-  border-bottom: 2px solid #e2e8f0;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  border-bottom: 2px solid var(--color-border); /* 2px intentional — not standard 1px hairline */
 }
 
 .reports-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .reports-table tr:hover {
-  background: #f8fafc;
+  background: var(--color-bg);
 }
 
 .chart-container {
-  padding: 2rem 1rem;
+  padding: var(--space-8) var(--space-4);
   min-height: 300px;
 }
 
@@ -373,7 +373,7 @@ export default {
   align-items: flex-end;
   justify-content: space-around;
   height: 250px;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .bar-wrapper {
@@ -393,96 +393,95 @@ export default {
 
 .bar {
   width: 100%;
-  background: linear-gradient(to top, #3b82f6, #60a5fa);
-  border-radius: 4px 4px 0 0;
-  transition: all 0.3s;
+  background: linear-gradient(to top, #3b82f6, #60a5fa); /* no token: blue-500/blue-400, not in token set */
+  border-radius: 4px 4px 0 0; /* no token: 4px partial-corner shorthand not in radius scale */
+  transition: all 0.3s; /* no token: 0.3s ≠ --transition-base (150ms) nor --transition-slow (250ms) */
   cursor: pointer;
 }
 
 .bar:hover {
-  background: linear-gradient(to top, #2563eb, #3b82f6);
+  background: linear-gradient(to top, var(--color-accent), #3b82f6); /* #2563eb → --color-accent; #3b82f6 has no token */
 }
 
 .bar-label {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  color: #64748b;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
   text-align: center;
   transform: rotate(-45deg);
   white-space: nowrap;
-  margin-top: 1.5rem;
+  margin-top: var(--space-6); /* second (effective) margin-top: 1.5rem; first duplicate removed */
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 }
 
 .stat-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
+  background: var(--color-surface);
+  border-radius: 12px; /* no token: same 12px issue as .card */
+  padding: var(--space-6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* no token: same as .card */
+  border-left: 4px solid #3b82f6; /* no token: #3b82f6 is blue-500, differs from --color-accent (#2563eb) */
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
 }
 
 .stat-value {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
 }
 
 .badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
 }
 
 .badge.success {
-  background: #dcfce7;
-  color: #166534;
+  background: #dcfce7; /* no token: green-100, no semantic success-bg token defined */
+  color: #166534; /* no token: green-800, no semantic success-text token defined */
 }
 
 .badge.warning {
-  background: #fef3c7;
-  color: #92400e;
+  background: #fef3c7; /* no token: amber-100, no semantic warning-bg token defined */
+  color: #92400e; /* no token: amber-800, no semantic warning-text token defined */
 }
 
 .badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
+  background: #fee2e2; /* no token: red-100, no semantic danger-bg token defined */
+  color: #991b1b; /* no token: red-800, no semantic danger-text token defined */
 }
 
 .positive-change {
-  color: #16a34a;
-  font-weight: 600;
+  color: #16a34a; /* no token: green-600, --color-success is #059669 (different shade) */
+  font-weight: var(--font-semibold);
 }
 
 .negative-change {
-  color: #dc2626;
-  font-weight: 600;
+  color: var(--color-danger);
+  font-weight: var(--font-semibold);
 }
 
 .loading {
   text-align: center;
-  padding: 3rem;
-  color: #64748b;
+  padding: var(--space-12);
+  color: var(--color-text-secondary);
 }
 
 .error {
-  background: #fee2e2;
-  color: #991b1b;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
+  background: #fee2e2; /* no token: red-100, no semantic danger-bg token defined */
+  color: #991b1b; /* no token: red-800, no semantic danger-text token defined */
+  padding: var(--space-4);
+  border-radius: 8px; /* no token: 8px not in radius scale (sm=6px, md=10px) */
+  margin: var(--space-4) 0;
 }
 </style>

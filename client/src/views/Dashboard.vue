@@ -731,90 +731,93 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .header-meta {
   font-size: 0.813rem;
-  color: #64748b;
+  color: var(--color-text-secondary);
 }
 
 .kpi-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .section-title {
   font-size: 1rem;
-  font-weight: 600;
-  color: #475569;
+  font-weight: var(--font-semibold);
+  color: var(--slate-600);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-4);
 }
 
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .kpi-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
 }
 
 .kpi-header {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-3);
 }
 
 .kpi-label {
   font-size: 0.813rem;
-  font-weight: 600;
-  color: #64748b;
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
+  /* letter-spacing: 0.025em — no token for this intermediate value; intentionally left as-is */
   letter-spacing: 0.025em;
 }
 
 .kpi-value {
   font-size: 2rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.025em;
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: var(--tracking-tight);
 }
 
 .kpi-goal {
   font-size: 0.813rem;
-  color: #64748b;
-  margin-bottom: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
 }
 
 .kpi-progress-bar {
   width: 100%;
   height: 6px;
-  background: #f1f5f9;
+  background: var(--slate-100);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .kpi-progress {
   height: 100%;
+  /* #3b82f6 has no token (accent is --color-accent: #2563eb); intentionally left as-is */
   background: #3b82f6;
   border-radius: 3px;
   transition: width 0.6s ease;
 }
 
 .kpi-progress.success {
+  /* #10b981 has no token (--color-success is #059669); intentionally left as-is */
   background: #10b981;
 }
 
 .charts-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
 .chart-card.full-width {
@@ -822,14 +825,14 @@ export default {
 }
 
 .chart-content {
-  padding: 1rem;
+  padding: var(--space-4);
 }
 
 .donut-chart {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: var(--space-12);
 }
 
 .donut-svg {
@@ -840,15 +843,15 @@ export default {
 .donut-legend {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 .legend-item {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  font-size: 0.875rem;
-  color: #475569;
+  font-size: var(--text-sm);
+  color: var(--slate-600);
 }
 
 .legend-dot {
@@ -861,9 +864,9 @@ export default {
 .order-health-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: var(--space-6);
   align-items: center;
-  padding: 1rem;
+  padding: var(--space-4);
   min-height: 240px;
 }
 
@@ -872,8 +875,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 0 1rem;
+  gap: var(--space-4);
+  padding: 0 var(--space-4);
 }
 
 .donut-svg-compact {
@@ -881,10 +884,11 @@ export default {
   height: 200px;
 }
 
+/* SVG text fill values are SVG presentation attributes, not CSS color properties — left as-is per constraint */
 .donut-center-label {
   font-size: 12px;
   fill: #64748b;
-  font-weight: 500;
+  font-weight: var(--font-medium);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -892,28 +896,29 @@ export default {
 .donut-center-value {
   font-size: 36px;
   fill: #0f172a;
-  font-weight: 700;
+  font-weight: var(--font-bold);
 }
 
 .donut-legend-compact {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.625rem 1.25rem;
+  /* 0.625rem and 1.25rem gap: 0.625rem has no token; kept as compound shorthand */
+  gap: 0.625rem var(--space-5);
 }
 
 .legend-item-compact {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #475569;
-  font-weight: 500;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--slate-600);
+  font-weight: var(--font-medium);
 }
 
 .order-health-metrics {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: var(--space-5);
   justify-content: center;
   align-items: center;
 }
@@ -921,65 +926,71 @@ export default {
 .health-metric {
   display: flex;
   flex-direction: column;
+  /* 0.375rem has no token; intentionally left as-is */
   gap: 0.375rem;
   text-align: center;
   width: 100%;
 }
 
 .health-metric-label {
+  /* 0.688rem has no token; intentionally left as-is */
   font-size: 0.688rem;
-  color: #64748b;
-  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-wide);
 }
 
 .health-metric-value {
+  /* 1.75rem has no token; intentionally left as-is */
   font-size: 1.75rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.025em;
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
 }
 
 .metric-good {
+  /* #10b981 has no token (--color-success is #059669); intentionally left as-is */
   color: #10b981;
 }
 
 .metric-warning {
+  /* #f59e0b has no token (--color-warning is #ea580c); intentionally left as-is */
   color: #f59e0b;
 }
 
 .metric-bad {
+  /* #ef4444 has no token (--color-danger is #dc2626); intentionally left as-is */
   color: #ef4444;
 }
 
 .horizontal-bar-chart {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 0 1rem;
+  gap: var(--space-6);
+  padding: 0 var(--space-4);
 }
 
 .h-bar-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .h-bar-label {
   width: 120px;
   min-width: 120px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #475569;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--slate-600);
   flex-shrink: 0;
 }
 
 .h-bar-container {
   flex: 1;
   height: 32px;
-  background: #f8fafc;
-  border-radius: 6px;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -988,19 +999,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 0.75rem;
+  padding-right: var(--space-3);
   transition: width 0.6s ease;
 }
 
 .h-bar-value {
   font-size: 0.813rem;
-  font-weight: 700;
-  color: white;
+  font-weight: var(--font-bold);
+  color: var(--color-surface);
 }
 
 .line-chart {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-6);
   height: 280px;
 }
 
@@ -1008,10 +1019,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 1rem;
-  font-size: 0.75rem;
-  color: #94a3b8;
-  border-right: 1px solid #e2e8f0;
+  padding-right: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  border-right: 1px solid var(--color-border);
 }
 
 .line-chart-area {
@@ -1019,7 +1030,7 @@ export default {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .line-bar-group {
@@ -1028,7 +1039,7 @@ export default {
   align-items: center;
   flex: 1;
   max-width: 80px;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .line-bar-wrapper {
@@ -1044,6 +1055,7 @@ export default {
   width: 100%;
   max-width: 60px;
   min-height: 8px;
+  /* #3b82f6 has no token; intentionally left as-is */
   background: #3b82f6;
   border-radius: 6px 6px 0 0;
   transition: all 0.3s ease;
@@ -1052,102 +1064,107 @@ export default {
 }
 
 .line-bar.empty-bar {
-  background: #e2e8f0;
+  background: var(--color-border);
   box-shadow: none;
   min-height: 4px;
 }
 
 .line-bar:hover {
-  background: #2563eb;
+  background: var(--color-accent);
   transform: scaleY(1.05);
 }
 
 .line-bar.empty-bar:hover {
-  background: #cbd5e1;
+  background: var(--slate-300);
   transform: none;
 }
 
 .line-bar-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #64748b;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
   white-space: nowrap;
 }
 
 .no-data {
-  padding: 2rem;
+  padding: var(--space-8);
   text-align: center;
-  color: #94a3b8;
-  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
 }
 
 .no-backlog {
-  padding: 3rem;
+  padding: var(--space-12);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .success-icon {
   width: 48px;
   height: 48px;
+  /* #10b981 has no token; intentionally left as-is */
   color: #10b981;
 }
 
 .no-backlog-text {
-  font-size: 1.125rem;
+  font-size: var(--text-lg);
+  /* #10b981 has no token; intentionally left as-is */
   color: #10b981;
-  font-weight: 600;
+  font-weight: var(--font-semibold);
   margin: 0;
 }
 
 .clickable-row {
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color var(--transition-base);
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: var(--color-accent-bg) !important;
 }
 
 /* Tasks Card Styles */
 .tasks-card {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .tasks-content {
-  padding: 1.5rem;
+  padding: var(--space-6);
 }
 
 .task-input-container {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .task-input {
   flex: 1;
-  padding: 0.75rem;
-  border: 2px solid #e2e8f0;
+  padding: var(--space-3);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
+  /* 0.95rem has no token; intentionally left as-is */
   font-size: 0.95rem;
   transition: border-color 0.2s ease;
 }
 
 .task-input:focus {
   outline: none;
+  /* #667eea is a brand-specific purple not in the token set; intentionally left as-is */
   border-color: #667eea;
 }
 
 .task-add-btn {
-  padding: 0.75rem 1.5rem;
+  padding: var(--space-3) var(--space-6);
+  /* #667eea / #764ba2 gradient not in token set; intentionally left as-is */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: var(--color-surface);
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: var(--font-semibold);
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -1163,31 +1180,31 @@ export default {
 
 .no-tasks {
   text-align: center;
-  padding: 2rem;
-  color: #64748b;
+  padding: var(--space-8);
+  color: var(--color-text-secondary);
   font-style: italic;
 }
 
 .tasks-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .task-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background: #f8fafc;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-bg);
   border-radius: 8px;
   border: 2px solid transparent;
   transition: all 0.2s ease;
 }
 
 .task-item:hover {
-  border-color: #e2e8f0;
-  background: white;
+  border-color: var(--color-border);
+  background: var(--color-surface);
 }
 
 .task-item.completed {
@@ -1196,13 +1213,14 @@ export default {
 
 .task-item.completed .task-text {
   text-decoration: line-through;
-  color: #94a3b8;
+  color: var(--color-text-muted);
 }
 
 .task-checkbox {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  /* #667eea is not in token set; intentionally left as-is */
   accent-color: #667eea;
 }
 
@@ -1210,17 +1228,19 @@ export default {
   flex: 1;
   cursor: pointer;
   user-select: none;
-  color: #0f172a;
+  color: var(--color-text-primary);
+  /* 0.95rem has no token; intentionally left as-is */
   font-size: 0.95rem;
 }
 
 .task-delete-btn {
   width: 28px;
   height: 28px;
-  background: #ef4444;
-  color: white;
+  background: var(--color-danger);
+  color: var(--color-surface);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  /* 1.25rem font-size: closest token is --text-lg (1.125rem); left as-is — no exact match */
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
@@ -1232,39 +1252,41 @@ export default {
 }
 
 .task-delete-btn:hover {
-  background: #dc2626;
+  /* #dc2626 maps to --color-danger */
+  background: var(--color-danger);
   transform: scale(1.1);
 }
 
 .po-button {
-  padding: 0.5rem 1rem;
+  padding: var(--space-2) var(--space-4);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 0.813rem;
-  font-weight: 600;
+  font-weight: var(--font-semibold);
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .po-button.create {
+  /* #3b82f6 has no token; intentionally left as-is */
   background: #3b82f6;
-  color: white;
+  color: var(--color-surface);
 }
 
 .po-button.create:hover {
-  background: #2563eb;
+  background: var(--color-accent);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 .po-button.view {
-  background: #64748b;
-  color: white;
+  background: var(--color-text-secondary);
+  color: var(--color-surface);
 }
 
 .po-button.view:hover {
-  background: #475569;
+  background: var(--slate-600);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3);
 }

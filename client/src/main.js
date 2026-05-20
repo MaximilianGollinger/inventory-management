@@ -7,6 +7,7 @@ import Orders from './views/Orders.vue'
 import Demand from './views/Demand.vue'
 import Spending from './views/Spending.vue'
 import Reports from './views/Reports.vue'
+import './styles/tokens.css'
 
 const router = createRouter({
   history: createWebHistory(),
