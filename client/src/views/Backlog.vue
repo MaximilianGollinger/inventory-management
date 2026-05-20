@@ -150,3 +150,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* All structural styles (.backlog, .page-header, .stats-grid, .stat-card,
+   .card, .card-header, .card-title, .badge, .table-container, .loading, .error)
+   are defined in App.vue global styles and already use design tokens.
+   No scoped overrides are required for this component. */
+</style>
